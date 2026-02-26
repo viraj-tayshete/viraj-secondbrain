@@ -1,0 +1,22 @@
+{
+	"nodes":[
+		{"id":"66dd74984007dc1d","x":-115,"y":-60,"width":320,"height":140,"type":"text","text":"## 10cr \nanything that helps me build 10+ cr in wealth "},
+		{"id":"06daf1aa66430952","x":-460,"y":200,"width":250,"height":60,"type":"text","text":"SDD - edtech "},
+		{"id":"1c391f712c7537c5","x":240,"y":180,"width":250,"height":101,"type":"text","text":"giving credit card to people who shift to the states "},
+		{"id":"60aa664a9f5181ac","x":440,"y":20,"width":250,"height":60,"type":"text","text":"making people hire better "},
+		{"id":"736f2050168d4892","x":-530,"y":-40,"width":250,"height":60,"type":"text","text":"water cooler market "},
+		{"id":"5b5067c436a7eb6c","x":240,"y":360,"width":250,"height":289,"type":"text","text":"-  too much coding , tech \n- too much regulation \n- too much licensing \n- too much everything \n- capital intensive \n\n\nperks\namazing market validation \nmore money - more valutation \n\nstill have to figure it out "},
+		{"id":"c5a4ea2fe09a3182","x":-460,"y":930,"width":250,"height":60,"color":"2","type":"text","text":"growthx internship"},
+		{"id":"93cee0f3eecfed7a","x":-460,"y":740,"width":250,"height":60,"color":"2","type":"text","text":"cred internship"},
+		{"id":"94bb445cdfc9b45c","x":-875,"y":740,"width":250,"height":121,"color":"2","type":"text","text":"## other things that I want to try"}
+	],
+	"edges":[
+		{"id":"362a3c3a3dd23148","fromNode":"06daf1aa66430952","fromSide":"right","toNode":"66dd74984007dc1d","toSide":"bottom"},
+		{"id":"5a383f7dbdecf169","fromNode":"1c391f712c7537c5","fromSide":"left","toNode":"66dd74984007dc1d","toSide":"bottom"},
+		{"id":"777f135c02f06766","fromNode":"94bb445cdfc9b45c","fromSide":"right","toNode":"93cee0f3eecfed7a","toSide":"bottom"},
+		{"id":"96856b1c8b1282ab","fromNode":"94bb445cdfc9b45c","fromSide":"right","toNode":"c5a4ea2fe09a3182","toSide":"top"},
+		{"id":"b7ce9b0e26859ade","fromNode":"66dd74984007dc1d","fromSide":"right","toNode":"60aa664a9f5181ac","toSide":"top"},
+		{"id":"a1c37304acc4265f","fromNode":"736f2050168d4892","fromSide":"right","toNode":"66dd74984007dc1d","toSide":"left"},
+		{"id":"61ced005a6dcf730","fromNode":"5b5067c436a7eb6c","fromSide":"top","toNode":"1c391f712c7537c5","toSide":"bottom"}
+	]
+}
