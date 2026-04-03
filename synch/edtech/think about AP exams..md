@@ -134,3 +134,11 @@ AP Calculus AB
     
 - [Exam tips] ([http://wowmath.org/Notes/AP%20Calculus/AP%20Exam/AP%20Exam%20Prep%20Ideas%202011.pdf](http://wowmath.org/Notes/AP%20Calculus/AP%20Exam/AP%20Exam%20Prep%20Ideas%202011.pdf))
 
+
+## ap product brainstorm
+
+
+lets think about small products that we can build and ship and take advantage of this last 1 month period 
+
+lets just make 2 products. thats it. 
+
