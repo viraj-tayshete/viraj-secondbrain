@@ -142,3 +142,124 @@ lets think about small products that we can build and ship and take advantage of
 
 lets just make 2 products. thats it. 
 
+
+
+## coding prompt
+You are a senior product engineer, software architect, security engineer, and QA lead.
+
+Your job is to design and build a small but robust MVP for an AP English essay feedback tool. Do not jump into coding immediately. First think through architecture, security, testing, and failure modes, then implement.
+
+CONTEXT
+We are building a web app where a student pastes an AP English Language essay and gets:
+- rubric-based scoring
+- inline feedback
+- explanation of why points were lost
+- concrete suggestions for improvement
+
+The MVP must be simple, reliable, and hard to break.
+
+PHASE 1 — ARCHITECTURE FIRST
+Before writing code, produce a short architecture plan that answers:
+1) What is the best system architecture for this MVP?
+2) What coding language / framework should be used, and why?
+3) What are the frontend, backend, and AI components?
+4) Do we need a database for the MVP? If yes, keep it minimal.
+5) What are the key failure points in this architecture?
+6) What should be built now versus deferred?
+
+Choose the simplest architecture that is still production-minded:
+- prefer a small modular monolith over unnecessary microservices
+- keep the LLM call on the server, never in the client
+- use environment variables for secrets
+- keep the interface simple and fast
+
+PHASE 2 — AUTHENTICATION AND SECURITY
+Design the authentication model deliberately.
+
+Decide:
+- whether the MVP should have no user login at all, or simple lightweight auth
+- whether OAuth is necessary now or should be deferred
+- how API keys will be protected
+- how to prevent users from directly calling the LLM provider from the browser
+
+Requirements:
+- all secrets stay server-side
+- validate all user input
+- rate-limit the essay analysis endpoint
+- guard against prompt injection and malicious inputs
+- sanitize logs so no secrets or sensitive prompts leak
+- make safe fallback behavior if the model fails or returns invalid output
+
+Use the principle that the LLM should only receive the minimum necessary text and instructions.
+
+PHASE 3 — PRODUCT LOGIC
+Build the app around a rubric-based AP essay evaluation flow.
+
+The evaluator should:
+- score the essay in a structured way
+- return rubric-aligned feedback
+- explain the reasoning for each point
+- highlight the exact parts of the essay that caused point loss
+- suggest improved wording or paragraph rewrites
+
+The system should output consistent structured JSON from the model, not free-form text only.
+
+PHASE 4 — IMPLEMENTATION RULES
+Build cleanly and defensively:
+- use a small, readable codebase
+- separate UI, API, prompt logic, and evaluation parsing
+- keep the prompt in one place
+- keep the response schema strongly typed
+- handle empty input, huge input, malformed output, and timeout cases
+- never crash on unexpected model output
+- add graceful error messages for users
+
+PHASE 5 — TESTING
+You must test the system yourself.
+
+Write and run tests for:
+- valid essay input
+- empty input
+- very long input
+- malformed or adversarial input
+- prompt injection attempt
+- LLM timeout
+- invalid JSON response from the model
+- missing environment variables
+
+Also check:
+- the app still works after repeated runs
+- the output format is stable
+- errors are contained and user-friendly
+
+PHASE 6 — SELF-AUDIT
+Before finalizing, review the system for:
+- architecture weakness
+- security issues
+- fragile assumptions
+- poor UX
+- broken edge cases
+- places where the scoring can be inconsistent
+
+Fix what you can. Clearly report what remains a limitation.
+
+DELIVERABLES
+Return:
+1) architecture decision
+2) tech stack decision
+3) authentication decision
+4) security plan
+5) folder structure
+6) implementation
+7) tests
+8) known limitations
+
+CONSTRAINTS
+- Optimize for robustness, not complexity
+- Keep the MVP small
+- Prefer predictable behavior over cleverness
+- Make the output easy to extend later
+- Use the LLM as a structured evaluator, not a conversational chatbot
+
+FINAL GOAL
+Ship a dependable MVP that evaluates AP-style essays with rubric-based feedback, strong security defaults, and good failure handling.
